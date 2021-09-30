@@ -13,16 +13,21 @@
 
   <div class="mt-5" *ngFor="let item of list">
     <!-- <ul *ngFor="let item of list"> -->
-    <li class="p-2" style="list-style-type: none;">{{item.name}}
-       <button class="btn btn-danger mr-2" placement="top"
-        ngbTooltip="Remove Task" (click)="removeTask(item.id)"><i class="bi bi-trash"></i></button>
-        <button class="btn btn-primary mr-2" placement="top"
-        ngbTooltip="Edit Task" ><i class="bi bi-pencil-fill"></i></button>
-      </li>
+    <li class="p-2" style="list-style-type: none;">
+      <input type="checkbox" id="cbox" aria-label="Checkbox for following text input"
+        style="text-decoration: line-through;">
+      <label for="cbox">
+        {{item.name}}
+      </label>&nbsp;
+      <button class="btn btn-danger mr-2" placement="top" ngbTooltip="Remove Task" (click)="removeTask(item.id)"><i
+          class="bi bi-trash"></i></button>
+      <!-- <button class="btn btn-primary mr-2" placement="top"
+        ngbTooltip="Edit Task"  (click)="updateTask(item.id)"><i class="bi bi-pencil-fill"></i></button> -->
+    </li>
     <!-- </ul> -->
   </div>
-  
 </div>
+
 
 
 

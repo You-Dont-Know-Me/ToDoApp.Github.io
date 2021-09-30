@@ -18,7 +18,7 @@ export class AppComponent {
 
   }
 
-
+public date = new Date();
   title = 'ToDoApp';
 
   list:ToDoItem[]=[];
@@ -26,26 +26,27 @@ export class AppComponent {
   addTask(item: string){
     // console.log(item);
     this.list.push({id:this.list.length,name:item});
-  window.localStorage.setItem("todoItems", JSON.stringify(this.list));
-  // this.list = JSON.parse(localStorage.getItem('todoItems') || '{}');
-    
+  window.localStorage.setItem("todoItems  ", JSON.stringify(this.list));
+  // this.list = JSON.parse(localStorage.getItem('todoItems') || '{}');    
     console.log(this.list);
   }
 
   removeTask(id:number){
     // console.log(id);
     this.list=this.list.filter(item=>item.id!==id);
-    window.localStorage.removeItem(`todoItems.id!==id`);
+    window.localStorage.removeItem('');
     // console.log(window.localStorage.removeItem("todoItems.id["+String(id)+"]"));
-    console.log();
-    
-    
-    
+    // console.log(window.localStorage.removeItem(id.toString(10)));
+
     // this.deleteItem(id);
   }
 
+
   // deleteItem(id:number){
   //   window.localStorage.removeItem("todoItems.id["+String(id)+"]");
+
+  // }
+  // updateTask(id:number){
 
   // }
 }
